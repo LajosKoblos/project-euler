@@ -6,12 +6,11 @@
 #
 # Find the sum of all the multiples of 3 or 5 below 1000.
 
-result = 0
+TARGET = 999
 
-for i in range(3, 1000):
-    if i % 5 == 0:
-        result += i
-    elif i % 3 == 0:
-        result += i
 
-print(result)
+def sum_divisible_by(n):
+    p = TARGET // n
+    return n * (p * (p + 1)) // 2
+
+print(sum_divisible_by(3) + sum_divisible_by(5) - sum_divisible_by(15))
